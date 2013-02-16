@@ -25,7 +25,7 @@ unsigned long calculateCrc32(ifstream &inf)
 
 unsigned long getCrc32FromFilename(const string &file)
 {
-    boost::regex crcRegex("([\\[\\(]+)([a-fA-F0-9]{8})([\\]\\)]+)");
+    const boost::regex crcRegex("([\\[\\(]+)([a-fA-F0-9]{8})([\\]\\)]+)");
     boost::match_results<string::const_iterator> what;
     if (boost::regex_search(file.begin(), file.end(), what, crcRegex)) {
         unsigned long crc;
