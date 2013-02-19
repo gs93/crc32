@@ -8,7 +8,7 @@ DESTDIR = /usr/local
 
 all: crc32
 
-crc32: $(OBJS)
+crc32:
 	g++ $(LDFLAGS) -o crc32 $(SRC) $(LDLIBS) 
 
 install:
