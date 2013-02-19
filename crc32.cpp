@@ -48,9 +48,13 @@ int main(int argc, const char *argv[])
     for (int arg = 1; argv[arg]; arg++) {
         inf.open(argv[arg], ios::binary);
         if (inf) {
+            cout << "           " << argv[arg];
+            cout.flush();
+
             unsigned long calcCrc = calculateCrc32(inf),
                 wantedCrc = getCrc32FromFilename(argv[arg]);
 
+            cout << "\r";
             if (calcCrc == wantedCrc)
                 cout << colorGreen;
             else if (wantedCrc == 0) // no crc found
