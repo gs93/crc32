@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -Wextra -Weffc++ -pedantic -std=c++11 -O3
 RM = rm -f
 CP = cp
 SRC = crc32.cpp
-LDLIBS = -lboost_regex
+LDLIBS = -lboost_regex -fopenmp
 DESTDIR = /usr/local
 
 all: crc32
