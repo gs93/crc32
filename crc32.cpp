@@ -1,8 +1,10 @@
+#include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <boost/regex.hpp>
+
 #include <boost/crc.hpp>
+#include <boost/regex.hpp>
 
 using namespace std;
 
@@ -63,8 +65,7 @@ int main(int argc, const char *argv[])
 
             #pragma omp critical
             {
-                cout.width(8);
-                cout << col << hex << calcCrc << colorReset << "   " << argv[arg] << endl;
+                cout << col << std::setw(8) << hex << calcCrc << colorReset << "   " << argv[arg] << endl;
             }
         } else {
             #pragma omp critical
